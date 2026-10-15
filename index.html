@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1439ec" />
+  <meta name="description" content="Prototipo interactivo de MigraRing para seguimiento de migraña, biomarcadores, alertas y reportes." />
+  <title>MigraRing Bio | LATAMinds</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <img class="brand-logo-full" src="logo-lataminds.png" alt="LATAMinds" />
+        <img class="brand-logo-compact" src="logo-lataminds-icon.png" alt="LATAMinds" />
+              </div>
+      <div class="sidebar-main">
+        <div class="nav-label">PLATAFORMA</div>
+        <nav id="desktop-nav" class="nav-list" aria-label="Secciones"></nav>
+        <div class="nav-label nav-label-second">MI ESPACIO</div>
+        <div id="secondary-nav" class="nav-list"></div>
+      </div>
+      <div class="sidebar-footer">
+        <div class="device-widget" id="sidebar-device"></div>
+        <div class="sidebar-profile"><span class="profile-avatar">PD</span><span><strong>Paciente demo</strong><small>Cuenta de prueba</small></span><span class="more-dots">···</span></div>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button mobile-menu" type="button" data-action="toggle-menu" aria-label="Abrir menú"></button><div class="breadcrumb"><span>Mi salud</span><span class="breadcrumb-chevron">/</span><strong id="section-breadcrumb">Resumen</strong></div></div>
+        <div class="topbar-actions"><button id="calm-toggle" class="calm-toggle" type="button" data-action="toggle-setting" data-setting="prodrome" aria-pressed="false" title="Reducir estímulos visuales"><span aria-hidden="true">☾</span><span id="calm-toggle-label">Modo calma</span></button><span class="demo-badge"><span class="demo-dot"></span> Prototipo · datos simulados</span><button class="icon-button notification-trigger" data-action="toggle-notifications" type="button" aria-label="Notificaciones" aria-expanded="false"><span id="notification-icon"></span><i id="notification-indicator"></i></button><div class="top-avatar" title="Paciente demo">PD</div></div>
+        <div id="notification-popover" class="notification-popover hidden"></div>
+      </header>
+      <main id="app-content" tabindex="-1" aria-live="polite"></main>
+      <footer class="app-footer"><span>© 2026 LATAMinds · MigraRing Bio — Prototipo de experiencia de usuario</span><span>No es un dispositivo médico validado. No utilizar para decisiones clínicas.</span></footer>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-bottom-nav" aria-label="Navegación móvil"></nav>
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <div id="mobile-overlay" class="mobile-overlay hidden" data-action="toggle-menu"></div>
+</body>
+</html>
